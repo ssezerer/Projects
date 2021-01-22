@@ -1,0 +1,19 @@
+Arkadaşlar bu proje kapsamında database'e yüklenmesi gereken 5 adet csv dosyası bulunmaktadır.
+Bu dosyaların yüklenmesinde hata ile karşılaşmamak için yardımcı video'da belirtilenlere ilave olarak yapılması gereken hususlar aşağıda belirtilmiştir.
+
+1. Kurulum için açılan ilk pencerede, browser'dan dosya seçiminin yapılması ile birlikte dil seçeneği "ingilizce (ABD)" olarak değiştirilmeli.
+
+2.  Yine aynı pencerede sol üst tarafta bulunan "Data source" bölümünden "Advanced" seçilmeli ve yeni açılan pencerede ilgili tablonun sütunları ve veri tiplerinde gerekli değişiklikler yapılmalıdır. Yapılcak bu değişiklikler proje dosyasında paylaşılan ERD'de belirtilen veri tiplerine göre yapılmalıdır.
+
+	Bu kapsamda aşağıda belirtilen sütunların veri tipi numeric seçilmeli ve "DataPrecision" değerine "10", DataScale" değerine "5" yazılmalıdır.
+
+	- market_fact : sales, discount, order_quantity, profit, shipping_cost
+
+(bu tablodaki product_base_margin sütununda Null değerler yerine başka string ifadeler yazıldığı için numeric yapmamız gerekmesine rağmen yapamıyoruz, bu nedenle bu sütun olduğu gibi bırakılmalı, daha sonra database oluşturulduktan sonra isteğe bağlı olarak öğrendiğimiz query'ler ile düzenleme yapılabilir. (Bu sütünun çözüme etkisi olmadığında bu düzenlemeler opsiyoneldir.) 
+
+	- shipping_dimen : order_id
+
+	Son olarak aşağıda belirtilen sütunların tipi "database date" yapılacaktır. 	
+
+	- shipping_dimen : ship_date
+	- orders_dimen : order_date	 
